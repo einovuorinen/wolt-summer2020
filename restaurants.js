@@ -6,7 +6,7 @@ $.getJSON("https://raw.githubusercontent.com/woltapp/summer2020/master/restauran
     console.log(data.restaurants)
     
     let restaurants = data.restaurants.filter( function(r) {
-    	return r.name.toLowerCase().includes(keyword.toLowerCase()) & getDistanceFromLatLonInKm(lat, lon, r.location[1], r.location[0])
+    	return r.name.toLowerCase().includes(keyword.toLowerCase()) & ( getDistanceFromLatLonInKm(lat, lon, r.location[1], r.location[0]) <= 3 )
     })
     $('#json').append(JSON.stringify(restaurants, null, 4))
     console.log(restaurants)
