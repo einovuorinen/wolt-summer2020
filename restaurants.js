@@ -1,8 +1,8 @@
 $.getJSON("https://raw.githubusercontent.com/woltapp/summer2020/master/restaurants.json", function(data) {
-	//const urlParams = new URLSearchParams(window.location.search);
-    const keyword = 'sushi';//urlParams.get('q');
-	const lon = 60.17045;//[urlParams.get('lon');
-	const lat = 24.93147;//urlParams.get('lat');
+	const urlParams = new URLSearchParams(window.location.search);
+    const keyword = urlParams.get('q');
+	const lon = urlParams.get('lon');
+	const lat = urlParams.get('lat');
     console.log(data.restaurants)
     
     let restaurants = data.restaurants.filter( function(r) {
